@@ -1,0 +1,13 @@
+{
+  "version": "2.5.0",
+  "buildNumber": 100,
+  "minVersion": "2.5.0",
+  "releaseDate": "2026-07-24",
+  "title": "มีระบบใหม่พร้อมใช้งาน",
+  "changelog": [
+    "ระบบ Hybrid Web App โหลดเร็วตรงจาก Vercel",
+    "รองรับ Local Notification เตือนการซ้อมตามเวลาจริง",
+    "ปรับ UI ให้รองรับ Safe Area, Notch และ Dynamic Island ของ iOS",
+    "ระบบตรวจสอบเวอร์ชันและ Remote Configuration แบบเรียลไทม์"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "short_name": "FutureArtist",
+  "name": "Future Artist Self-Discipline PWA",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/YBKDbPR7/Chat-GPT-Image-21-2569-16-58-02.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#0d0f12",
+  "theme_color": "#0d0f12",
+  "display": "standalone",
+  "orientation": "portrait"
+}

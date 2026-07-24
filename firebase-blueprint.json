@@ -1,0 +1,58 @@
+{
+  "entities": {
+    "UserAppData": {
+      "title": "UserAppData",
+      "description": "Full aggregated state of the future artist training tracker",
+      "type": "object",
+      "properties": {
+        "profile": {
+          "type": "object",
+          "description": "User profile info like level, nickname, streaks"
+        },
+        "settings": {
+          "type": "object",
+          "description": "App configurations"
+        },
+        "history": {
+          "type": "array",
+          "description": "List of day training progress logs"
+        },
+        "goals": {
+          "type": "array",
+          "description": "List of trainee's performance goals"
+        },
+        "healthLogs": {
+          "type": "array",
+          "description": "Daily metrics like sleep, height, water"
+        },
+        "diaryEntries": {
+          "type": "array",
+          "description": "Reflective diary entries of the artist journey"
+        },
+        "achievements": {
+          "type": "array",
+          "description": "Unlocked status and progress of various awards"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of the last database push"
+        }
+      },
+      "required": [
+        "profile",
+        "settings",
+        "history",
+        "goals",
+        "healthLogs",
+        "diaryEntries",
+        "achievements"
+      ]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "UserAppData",
+      "description": "Single-document state mapping for reliable full-offline data restoration"
+    }
+  }
+}

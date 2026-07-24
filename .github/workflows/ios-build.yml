@@ -1,0 +1,69 @@
+name: Build iOS Unsigned IPA
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-ios:
+
+    runs-on: macos-latest
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+        cache: npm
+
+
+    - name: Install dependencies
+      run: npm install
+
+
+    - name: Build Web App
+      run: npm run build
+
+
+    - name: Capacitor Sync
+      run: npx cap sync ios
+
+
+    # Build iOS แบบไม่เซ็น
+    - name: Build Unsigned iOS App
+      run: |
+        cd ios/App
+
+        xcodebuild \
+          -project App.xcodeproj \
+          -scheme App \
+          -configuration Release \
+          -sdk iphoneos \
+          -archivePath build/App.xcarchive \
+          CODE_SIGNING_ALLOWED=NO \
+          CODE_SIGNING_REQUIRED=NO \
+          archive
+
+
+    # ดึงไฟล์ .app ออกจาก archive
+    - name: Create IPA
+      run: |
+        mkdir Payload
+
+        cp -R ios/App/build/App.xcarchive/Products/Applications/App.app Payload/
+
+        zip -r FutureArtist-Unsigned.ipa Payload
+
+
+    # Upload IPA
+    - name: Upload IPA
+      uses: actions/upload-artifact@v4
+      with:
+        name: FutureArtist-Unsigned-IPA
+        path: FutureArtist-Unsigned.ipa

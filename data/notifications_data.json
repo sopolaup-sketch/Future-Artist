@@ -1,0 +1,81 @@
+{
+  "subscriptions": [
+    {
+      "userId": "ARTIST-GLOBAL-ACCOUNT",
+      "settings": {
+        "notificationsEnabled": true,
+        "theme": "dark",
+        "targetEndDate": "2027-04-30",
+        "quotaExceededWarning": true,
+        "dailyNotification": {
+          "enabled": true,
+          "time": "06:00"
+        },
+        "waterReminder": {
+          "enabled": true,
+          "time": "08:00"
+        },
+        "healthReminder": {
+          "time": "12:00",
+          "enabled": true
+        },
+        "timerReminder": {
+          "enabled": true,
+          "time": "17:00"
+        },
+        "missionReminder": {
+          "enabled": true,
+          "time": "19:30"
+        },
+        "achievementNotification": {
+          "enabled": true,
+          "time": "20:00"
+        },
+        "goalNotification": {
+          "enabled": true,
+          "time": "20:30"
+        },
+        "weeklyReport": {
+          "enabled": true,
+          "time": "20:00"
+        },
+        "monthlyReport": {
+          "time": "21:00",
+          "enabled": true
+        },
+        "countdownNotification": {
+          "time": "10:00",
+          "enabled": true
+        },
+        "sleepNotification": {
+          "enabled": true,
+          "time": "22:00"
+        },
+        "birthdayNotification": {
+          "time": "09:00",
+          "enabled": true
+        },
+        "emergencyNotification": {
+          "enabled": true,
+          "time": "15:00"
+        }
+      },
+      "sentHistory": {},
+      "userState": {
+        "todayStr": "2026-07-24",
+        "visitedToday": false,
+        "modeSelected": false,
+        "selectedMode": "NONE",
+        "completedMissionsCount": 0,
+        "totalMissionsCount": 0,
+        "isAllMissionsCompleted": false,
+        "waterIntakeMl": 0,
+        "waterTargetMl": 2000,
+        "lastVisitedDate": "2026-07-23",
+        "weeklyReportOpened": false,
+        "monthlyReportOpened": false,
+        "targetEndDate": "2027-04-30"
+      }
+    }
+  ]
+}

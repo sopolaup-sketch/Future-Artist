@@ -1,0 +1,16 @@
+{
+  "maintenance": false,
+  "maintenanceMessage": "ระบบ Future Artist กำลังปรับปรุงระบบเซิร์ฟเวอร์ชั่วคราวเพื่อประสิทธิภาพสูงสุด กรุณาลองใหม่อีกครั้งในภายหลัง",
+  "aiCoach": true,
+  "danceMode": true,
+  "newTraining": true,
+  "minAppVersion": "2.5.0",
+  "latestAppVersion": "2.5.0",
+  "announcement": "",
+  "features": {
+    "vocalAnalyzer": true,
+    "danceStreak": true,
+    "shopMysteryBox": true,
+    "cloudSync": true
+  }
+}

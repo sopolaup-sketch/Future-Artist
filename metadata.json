@@ -1,0 +1,8 @@
+{
+  "name": "Future Artist",
+  "description": "Progressive Web App (PWA) สำหรับพัฒนาตัวเองสู่การเป็นศิลปิน นักแสดง นักร้อง และนักเต้น เพื่อวัยรุ่นอายุ 15-20 ปี",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

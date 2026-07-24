@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+html {
+  font-size: 85%; /* UI scaled down 15% for compact mobile & desktop presentation */
+}
+
+:root {
+  --bg-color: #0F1115;
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --soft-blue: #60A5FA;
+  --gold: #FBBF24;
+  --success: #34D399;
+  --error: #F87171;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Base style resets */
+body {
+  background-color: var(--bg-color);
+  color: #f3f4f6;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  font-size: 88%; /* Font size scaled ~25% smaller than standard 16px baseline */
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Premium Immersive Glass Classes - Scaled 15% more compact */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 22px;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.20);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.55);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+.glass-card-interactive {
+  transition: all 0.25s ease;
+}
+.glass-card-interactive:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(96, 165, 250, 0.5);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+/* Text glow effects */
+.text-glow-blue {
+  text-shadow: 0 0 10px rgba(96, 165, 250, 0.4);
+}
+.text-glow-gold {
+  text-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
+}
+
+/* Screen shake animation */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+/* Pulsing accent glowing dots */
+.glow-dot-blue {
+  box-shadow: 0 0 8px #60a5fa;
+}
+.glow-dot-green {
+  box-shadow: 0 0 8px #34d399;
+}
+.glow-dot-orange {
+  box-shadow: 0 0 8px #fb923c;
+}
+.glow-dot-gold {
+  box-shadow: 0 0 8px #facc15;
+}
+
+/* Prevent auto-zoom on iOS mobile when tapping inputs */
+@media screen and (max-width: 768px) {
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}
+
+/* Dynamic Font Scale Classes for Mobile Accessibility & Optimal Reading */
+.font-scale-normal {
+  font-size: 100%;
+}
+.font-scale-large {
+  font-size: 108%;
+}
+.font-scale-xlarge {
+  font-size: 116%;
+}
+
+/* Mobile Touch & Tap target optimization */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* Mobile Screen Padding & Radius adjustments for small displays */
+@media screen and (max-width: 480px) {
+  .glass-panel, .glass {
+    border-radius: 20px;
+  }
+}
+
+/* iOS & Mobile Safe Area & Dynamic Island Utilities */
+.safe-area-top, .pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.safe-area-bottom, .pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.pl-safe {
+  padding-left: env(safe-area-inset-left, 0px);
+}
+.pr-safe {
+  padding-right: env(safe-area-inset-right, 0px);
+}
+.mt-safe {
+  margin-top: env(safe-area-inset-top, 0px);
+}
+.mb-safe {
+  margin-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Smooth iOS Momentum Scroll & Tap highlight */
+* {
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+}
+
